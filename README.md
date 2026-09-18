@@ -1,32 +1,31 @@
-# React + TypeScript + Vite
+# Idea Dental — Website Redesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A visual/UX remake of the Idea Dental marketing site (live: [ideadentistry.com](https://www.ideadentistry.com/)),
+built with React 19, TypeScript, Vite, Tailwind CSS v4, and Framer Motion.
 
-Currently, two official plugins are available:
+This is a re-skin, not a content rewrite — all copy, services, hours, and contact
+info are sourced from the real business, with the layout, motion, and visual
+language rebuilt from scratch.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Highlights
 
-## React Compiler
+- Scroll-driven Hero and About sequences (pinned reveal, karaoke-style headline)
+- A "curtain reveal" pattern chaining Technology → Doctors → Gallery into one
+  connected sequence
+- A fanned, draggable results gallery with depth-of-field blur on the side cards
+- An interactive before/after Testimonials slider with a scroll-scrubbed pan
+- A real-content FAQ, Contact form (calls the practice directly — no backend),
+  and Footer
+- A glassmorphic mobile Book/Call action bar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting started
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+```bash
+npm run build   # type-checks and builds for production
+npm run lint     # oxlint
+```
