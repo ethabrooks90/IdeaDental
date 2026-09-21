@@ -25,8 +25,13 @@ function App() {
         <Services />
         {/* Wrapper bounds Technology's sticky range to just this pair — it
             stays pinned only while Doctors rises over it, then scrolls away
-            normally instead of bleeding under Gallery and everything after. */}
-        <div className="relative">
+            normally instead of bleeding under Gallery and everything after.
+            id lives here, not on the sticky Technology section itself —
+            browsers resolve #anchor jumps to a `position: sticky` element
+            inconsistently (landing scrolled past it, or not scrolling at
+            all), since a stable ordinary block gives native hash navigation
+            a predictable target. */}
+        <div className="relative" id="technology">
           <Technology />
           <Doctors />
         </div>
@@ -36,8 +41,10 @@ function App() {
       </main>
       {/* Wrapper bounds Contact's sticky range to just this pair — Contact
           stays steady while the Footer rises up and covers it like a
-          curtain, the same technique used for Technology/Doctors above. */}
-      <div className="relative">
+          curtain, the same technique used for Technology/Doctors above.
+          id lives here rather than on the sticky Contact section — see the
+          #technology comment above for why. */}
+      <div className="relative" id="contact">
         <Contact />
         <Footer />
       </div>

@@ -8,7 +8,9 @@ export default function Technology() {
     // sticky + a lower stacking order than Doctors below it — Doctors' solid,
     // rounded-top section rises up the page and covers this one like a
     // curtain, while this section itself stays put ("steady") underneath.
-    <section id="technology" className="sticky top-0 z-0 bg-cream">
+    // The #technology anchor lives on the wrapping div in App.tsx instead of
+    // here — see that comment for why.
+    <section className="sticky top-0 z-0 bg-cream">
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

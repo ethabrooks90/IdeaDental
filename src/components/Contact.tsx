@@ -31,8 +31,10 @@ export default function Contact() {
     // sticky + a lower stacking order than the Footer below it — the Footer's
     // solid, rounded-top panel rises up the page and covers this one like a
     // curtain, while this section stays put ("steady") underneath (see the
-    // matching `z-10`/rounded-top/shadow note in Footer.tsx).
-    <section id="contact" className="sticky top-0 z-0 overflow-hidden bg-cream">
+    // matching `z-10`/rounded-top/shadow note in Footer.tsx). The #contact
+    // anchor lives on the wrapping div in App.tsx instead of here — see that
+    // comment for why.
+    <section className="sticky top-0 z-0 overflow-hidden bg-cream">
       <div className="grid lg:grid-cols-2">
         <div className="relative min-h-[420px] lg:min-h-[680px]">
           <img
