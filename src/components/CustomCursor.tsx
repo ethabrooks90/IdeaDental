@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
-import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion'
+import { motion, useMotionValue, useReducedMotion } from 'framer-motion'
 
 /** The small dashed circle + center dot that used to sit in the About section
  * now follows the pointer instead — a site-wide cursor ring, skipped on
- * touch devices and when the visitor prefers reduced motion. */
+ * touch devices and when the visitor prefers reduced motion. Tracks the raw
+ * pointer position directly (no spring easing) so it snaps to the cursor
+ * with zero perceptible lag instead of trailing behind it. */
 export default function CustomCursor() {
   const reduceMotion = useReducedMotion()
   const [enabled, setEnabled] = useState(() => window.matchMedia('(hover: hover) and (pointer: fine)').matches)
 
   const x = useMotionValue(-100)
   const y = useMotionValue(-100)
-  const springX = useSpring(x, { stiffness: 500, damping: 40, mass: 0.5 })
-  const springY = useSpring(y, { stiffness: 500, damping: 40, mass: 0.5 })
 
   useEffect(() => {
     const query = window.matchMedia('(hover: hover) and (pointer: fine)')
@@ -37,7 +37,7 @@ export default function CustomCursor() {
   return (
     <motion.div
       aria-hidden="true"
-      style={{ x: springX, y: springY }}
+      style={{ x, y }}
       className="pointer-events-none fixed top-0 left-0 z-[999] -translate-x-1/2 -translate-y-1/2"
     >
       <span className="flex h-7 w-7 items-center justify-center rounded-full border border-dashed border-ink/60">

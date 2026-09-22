@@ -55,17 +55,12 @@ function HeroMedia({
 function HeroContent({ contentOpacity, contentY }: { contentOpacity: number; contentY: number }) {
   return (
     <div style={{ opacity: contentOpacity, transform: `translateY(${contentY}px)` }} className="max-w-xl">
-      {/* "Orthodontist" is a protected specialty title — per Dr. Vu, the
-          practice provides orthodontic treatment (braces) but no one on
-          staff holds that specialist credential, so the headline can't
-          claim it. The supporting line below already says "orthodontic
-          care" (a service), not "orthodontist" (a title), which is fine. */}
-      <h1 className="font-display text-[2.6rem] leading-[1.08] font-extrabold tracking-tight text-cream sm:text-6xl lg:text-[3.4rem]">
-        Dentist in Houston, TX
+      <h1 className="font-display text-[2.6rem] leading-[1.08] font-extrabold tracking-tight text-cream uppercase sm:text-6xl lg:text-[3.4rem]">
+        General dentistry in Houston, TX
       </h1>
       <p className="mt-6 max-w-lg text-lg leading-relaxed text-cream/75">
-        Idea Dental provides general, cosmetic, preventive, emergency, and orthodontic care for
-        patients of all ages at our Houston dental office.
+        Comprehensive dental care for you and your family, from routine checkups to restorative and
+        cosmetic treatments.
       </p>
 
       <div className="mt-9 flex flex-wrap items-center gap-4">
