@@ -41,7 +41,7 @@ export default function Contact() {
             src={contactPortrait}
             alt="A smiling Idea Dental patient"
             className="absolute inset-0 h-full w-full object-cover"
-            style={{ objectPosition: '58% center' }}
+            style={{ objectPosition: 'center 15%' }}
           />
           {/* Fades the photo into the form panel's cream background instead
               of cutting hard at the column boundary — only meaningful once
